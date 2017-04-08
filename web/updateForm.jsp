@@ -15,7 +15,7 @@
             
            <table class="update"> 
             <label>FamilyID</label>
-            <input type="text" name="id" value="<%= friend.getFriendID() %>" />
+            <input type="text" name="id" value="<%= friend.getFriendID() %>"readonly />
             <br>
             <label>Relation To You: </label>
             <input type="text" name="familyMember" value="<%= friend.getFamilyMember() %>" />
