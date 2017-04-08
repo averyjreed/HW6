@@ -5,13 +5,16 @@
  */
 package controller;
 
+import dbHelpers.ReadRecord;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Friends;
 
 /**
  *
@@ -76,11 +79,19 @@ public class UpdateFormServlet extends HttpServlet {
         int friendID = Integer.parseInt(request.getParameter("friendID"));
         
         //create a ReadRecord class
+        ReadRecord rr = new ReadRecord(friendID);
         
         //use ReadRecord to get the friend data
+        rr.doRead();
+        Friends friend = rr.getFriend();
         
         //pass friend and control to updateForm.jsp
+        request.setAttribute("friend", friend);
         
+        String url = "/updateForm.jsp";
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
     }
 
     /**
