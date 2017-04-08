@@ -11,11 +11,14 @@
     <body>
 <h1>Update A Family Member Record</h1>
         
-        <form name="updateForm" action="updateMember" method="get">
+        <form name="updateForm" action="updateFriend" method="get">
             
            <table class="update"> 
             <label>FamilyID</label>
-            <input type="text" name="memberType" value="<%= friend.getFriendID() %>" />
+            <input type="text" name="id" value="<%= friend.getFriendID() %>" />
+            <br>
+            <label>Relation To You: </label>
+            <input type="text" name="familyMember" value="<%= friend.getFamilyMember() %>" />
             <br>
             <label>Member's Name: </label>
             <input type="text" name="name" value="<%= friend.getName() %>" />
