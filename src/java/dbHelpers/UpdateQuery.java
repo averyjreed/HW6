@@ -55,7 +55,7 @@ public class UpdateQuery {
             
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setString(1, friend.getMember());
+            ps.setString(1, friend.getFamilyMember());
             ps.setString(2, friend.getName());
             ps.setInt(3, friend.getAge());
             ps.setString(4, friend.getFavoriteColor());
