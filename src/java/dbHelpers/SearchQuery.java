@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Friends;
 
 public class SearchQuery {
     
@@ -68,7 +69,56 @@ public class SearchQuery {
         
         
         
-        
+        public String getHTMLTable() {
+    String table = "";
+    table += "<table border=1>";
+    
+    
+        try {
+            while(this.results.next()){
+                
+                Friends friend = new Friends();
+                friend.setFriendID(this.results.getInt("friendID"));
+                friend.setFamilyMember(this.results.getString("familyMember"));
+                friend.setName(this.results.getString("name"));
+                friend.setAge(this.results.getInt("age"));
+                friend.setFavoriteColor(this.results.getString("favoriteColor"));
+                
+                table +="<tr>";
+                table+="<td>";
+                table+= friend.getFriendID();
+                table +="</td>";
+                
+                table+="<td>";
+                table+= friend.getFamilyMember();
+                table +="</td>";
+                
+                table+="<td>";
+                table+= friend.getName();
+                table +="</td>";
+                
+                table+="<td>";
+                table+= friend.getAge();
+                table +="</td>";
+                
+                table+="<td>";
+                table+= friend.getFavoriteColor();
+                table +="</td>";
+                
+                table+="<td>";
+                table+= "<a href=update?friendID=" + friend.getFriendID() +  "> Update </a>" + "<a href=delete?friendID=" + friend.getFriendID() + "> Delete </a>";
+                table +="</td>";
+                
+                table+= "</tr>";
+            }   } catch (SQLException ex) {
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
+    table += "</table>";
+            return table;
+    
+}
         
         
         
