@@ -9,5 +9,8 @@
         <h1>My Family Database</h1>
         
         <a href="read">View My Family</a>
+        <br> <br>
+        <a href="search.jsp">Search Friends</a>
+        
     </body>
 </html>

@@ -15,6 +15,8 @@
         <br><br>
         
         <a href ="add">Add New Family Member</a>
+         <br> <br>
+        <a href="search.jsp">Search Friends</a>
         
     </body>
 </html>
