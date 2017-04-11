@@ -54,7 +54,7 @@ public class ReadQuery {
    public void doRead(){
        
         try {
-            String query = "Select * from friends";
+            String query = "Select * FROM friends ORDER BY friendID ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
             this.results = ps.executeQuery();

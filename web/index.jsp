@@ -10,7 +10,7 @@
         
         <a href="read">View My Family</a>
         <br> <br>
-        <a href="search.jsp">Search Friends</a>
+        <a href="search.jsp">Search Family</a>
         
     </body>
 </html>
